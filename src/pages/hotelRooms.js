@@ -33,12 +33,13 @@ const HotelRooms = () => {
   }
 
   return (
+    <div>
     <div className="row justify-content-center">
       {hotelRooms.map((room) => (
         <div className="col-md-4 mb-3" key={room.id}>
           <div className="card">
             <img
-              src={`http://localhost:3000/images/${room.image}`}
+              src={room.image?`http://localhost:3000/images/${room.image}`:"http://localhost:3000/images/default-room.jpg"}
               alt={room.image}
               className="card-img-top"
               style={{ objectFit: 'cover', height: '200px' }}
@@ -54,8 +55,12 @@ const HotelRooms = () => {
             </div>
           </div>
         </div>
-      ))}
-    </div>
+        ))}
+        </div>
+        <div className="d-flex justify-content-center mt-3">
+    <Link to={`/addRoom`} className="btn btn-primary">Add A Room</Link>
+    </div>  
+    </div>   
   );
 };
 

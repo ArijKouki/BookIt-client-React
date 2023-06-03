@@ -17,6 +17,9 @@ import DeleteBookingPage from './pages/deleteBooking';
 import UpdateBookingPage from './pages/updateBooking';
 import HotelRooms from './pages/hotelRooms';
 import HotelBookings from './pages/hotelBookings';
+import DeleteRoomPage from './pages/deleteRoom';
+import UpdateRoomPage from './pages/updateRoom';
+import AddRoomPage from './pages/addRoom';
 
 
 const App = () => {
@@ -58,6 +61,9 @@ const App = () => {
         <Route path="/updateBooking/:bookingId" element={<UpdateBookingPage />} />
         <Route path="/hotelRooms" element={<HotelRooms />} />
         <Route path="/hotelBookings" element={<HotelBookings />} />
+        <Route path="/deleteRoom/:roomId" element={<DeleteRoomPage />} />
+        <Route path="/updateRoom/:roomId" element={<UpdateRoomPage />} />
+        <Route path="/addRoom" element={<AddRoomPage />} />
       </Routes>
     </Router>
   );

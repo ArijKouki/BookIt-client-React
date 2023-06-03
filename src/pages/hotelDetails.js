@@ -67,7 +67,7 @@ const HotelDetails = () => {
       <div className="card mb-3">
         <div className="col-md-12">
           <img
-            src={`http://localhost:3000/images/${room.image}`}
+            src={room.image?`http://localhost:3000/images/${room.image}`:"http://localhost:3000/images/default-room.jpg"}
             alt={room.image}
             className="card-img"
             style={{ objectFit: 'cover', width: '100%' }}
