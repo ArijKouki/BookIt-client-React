@@ -22,7 +22,7 @@ const LoginHotel = ({ onLoginSuccess,setLoggedInRole }) => {
         const { name } = response.data.data;
         onLoginSuccess(name);
         setLoggedInRole("hotel");
-        navigate('/');
+        navigate('/hotelRooms');
       }
     } catch (err) {
       console.error('Error logging in:', err);

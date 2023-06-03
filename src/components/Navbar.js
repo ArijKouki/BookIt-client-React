@@ -28,7 +28,7 @@ const Navbar = ({ isLoggedIn,loggedInRole, handleLogout }) => {
   
     return (
       <nav className="navbar">
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to={loggedInRole === 'user' ? "/": "/hotelRooms"} style={{ textDecoration: 'none' }}>
         <div className="logo">Book'It</div>
         </Link>
         {isLoggedIn ? (
@@ -36,14 +36,17 @@ const Navbar = ({ isLoggedIn,loggedInRole, handleLogout }) => {
             <button className="btn btn-dark" onClick={handleDropdownToggle}>
               {isLoggedIn}
             </button>
+
             {showDropdown && (
               <div className="dropdown">
                 <Link to={loggedInRole === 'user' ? "/profile": "profileHotel"} className="dropdown-item">Profile</Link>
+                <Link to={loggedInRole === 'user' ? "/bookings":"hotelBookings"} className="dropdown-item">My bookings</Link>
                 <button className="dropdown-item" onClick={handleLogoutClick}>
                   Logout
                 </button>
               </div>
             )}
+
           </div>
         ) : (
             <Link to="/login" className="btn btn-dark" style={{ textDecoration: 'none' }}>
